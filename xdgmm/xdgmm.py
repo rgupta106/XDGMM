@@ -162,7 +162,7 @@ class XDGMM(BaseEstimator):
             self.weights = tmp_gmm.weights_
             self.V = tmp_gmm.covariances_
 
-            logl=bovyXD.extreme_deconvolution(X,Xerr,self.weights,self.mu,self.V,
+            logl=bovyXD(X,Xerr,self.weights,self.mu,self.V,
                         splitnmerge=self.splitnmerge,tol=self.tol,maxiter=self.n_iter,w=self.w)
             self.GMM.V = self.V
             self.GMM.mu = self.mu
